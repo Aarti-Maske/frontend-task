@@ -3,459 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Dashboard | Web & Mobile</title>
+    <title>Responsive Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
-    <!-- Mobile Hamburger Menu Button -->
-    <div class="mobile-menu-btn" id="mobileMenuBtn">
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-
-    <!-- Mobile Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-
-    <div class="dashboard">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-chart-line"></i>
-                    <h1>Responsive Dashboard</h1>
+    <div class="container">
+        <!-- Image Slider at Top Left -->
+        <div class="top-slider-section">
+            <div class="image-slider">
+                <div class="slider-images">
+                    <img src="images/image1.jpg" class="slider-img active" alt="Slide 1">
+                    <img src="images/image2.jpg" class="slider-img" alt="Slide 2">
+                    <img src="images/image3.jpg" class="slider-img" alt="Slide 3">
+                    <img src="images/image4.jpg" class="slider-img" alt="Slide 4">
                 </div>
-                <div class="user-info">
-                    <div class="user-avatar">JD</div>
-                    <span class="user-name">John Doe</span>
-                    <div class="mobile-user-icon">
-                        <i class="fas fa-user-circle"></i>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
                     </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <!-- Sidebar with Image Slider -->
-            <aside class="sidebar" id="sidebar">
-                <!-- Close button for mobile -->
-                <button class="sidebar-close-btn" id="sidebarCloseBtn">
-                    <i class="fas fa-times"></i>
-                </button>
-                
-                <!-- Image Slider at the top -->
-                <div class="image-slider">
-                    <div class="slider-container">
-                        <div class="slider-image active">
-                            <img src="images/image1.jpg" alt="Dashboard Overview">
-                            <div class="slider-caption">Dashboard Overview</div>
-                        </div>
-                        <div class="slider-image">
-                            <img src="images/image2.jpg" alt="Analytics Data">
-                            <div class="slider-caption">Analytics Data</div>
-                        </div>
-                        <div class="slider-image">
-                            <img src="images/image3.jpg" alt="Performance Metrics">
-                            <div class="slider-caption">Performance Metrics</div>
-                        </div>
-                        <div class="slider-image">
-                            <img src="images/image4.jpg" alt="User Statistics">
-                            <div class="slider-caption">User Statistics</div>
-                        </div>
-                    </div>
-                    <div class="slider-controls">
-                        <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                        <div class="slider-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-
-                <!-- Navigation Menu -->
-                <nav class="sidebar-menu">
-                    <h3><i class="fas fa-th-large"></i> Dashboard</h3>
-                    <ul>
-                        <li class="active" data-container="container1">
-                            <i class="fas fa-images"></i> Image Carousel
-                        </li>
-                        <li data-container="container2">
-                            <i class="fas fa-info-circle"></i> Information Block
-                        </li>
-                        <li data-container="container3">
-                            <i class="fas fa-sliders-h"></i> Interactive Slider
-                        </li>
-                        <li data-container="container4">
-                            <i class="fas fa-file-alt"></i> Static Content
-                        </li>
-                        <li data-container="container5">
-                            <i class="fas fa-play-circle"></i> Action Buttons
-                        </li>
-                        <li data-container="container6">
-                            <i class="fas fa-sync-alt"></i> Animated Slider
-                        </li>
-                    </ul>
-                </nav>
-                
-                <!-- Mobile Bottom Navigation (Mobile App Style) -->
-                <nav class="mobile-bottom-nav">
-                    <a href="#" class="nav-item active">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Analytics</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-cog"></i>
-                        <span>Settings</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-user"></i>
-                        <span>Profile</span>
-                    </a>
-                </nav>
-            </aside>
-
-            <!-- Main Content Area -->
-            <main class="content">
-                <!-- Container 1: Image Carousel -->
-                <section class="card container-card" id="container1">
-                    <div class="container-header">
-                        <h2><i class="fas fa-images"></i> Container 1: Image Carousel</h2>
-                        <span class="container-badge">Interactive</span>
-                    </div>
-                    <div class="carousel-container">
-                        <div class="carousel-slide active">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop" alt="Business Analytics">
-                            <div class="carousel-text">
-                                <h3>Business Analytics Dashboard</h3>
-                                <p>Real-time data visualization for informed decision making</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop" alt="Data Visualization">
-                            <div class="carousel-text">
-                                <h3>Advanced Data Visualization</h3>
-                                <p>Interactive charts and graphs for complex datasets</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop" alt="Performance Metrics">
-                            <div class="carousel-text">
-                                <h3>Performance Metrics</h3>
-                                <p>Track KPIs and measure business performance</p>
-                            </div>
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-btn prev-carousel-btn"><i class="fas fa-chevron-left"></i></button>
-                            <div class="carousel-dots">
-                                <span class="carousel-dot active"></span>
-                                <span class="carousel-dot"></span>
-                                <span class="carousel-dot"></span>
-                            </div>
-                            <button class="carousel-btn next-carousel-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Container 2: Information Block -->
-                <section class="card container-card" id="container2">
-                    <div class="container-header">
-                        <h2><i class="fas fa-info-circle"></i> Container 2: Information Block</h2>
-                        <span class="container-badge">Static</span>
-                    </div>
-                    <div class="info-content">
-                        <div class="info-text">
-                            <h3>About This Dashboard</h3>
-                            <p>This responsive layout adapts seamlessly across desktop and mobile devices. It uses modern CSS techniques like Flexbox and Grid to ensure consistency, readability, and a smooth user experience.</p>
-                            <p>The design follows mobile-first principles and implements touch-friendly interfaces for mobile applications.</p>
-                        </div>
-                        <div class="info-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-mobile-alt"></i>
-                                <div>
-                                    <h4>100% Responsive</h4>
-                                    <p>Works on all devices</p>
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-bolt"></i>
-                                <div>
-                                    <h4>Fast Loading</h4>
-                                    <p>Optimized performance</p>
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <div>
-                                    <h4>Secure</h4>
-                                    <p>Protected data</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Container 3: Interactive Slider -->
-                <section class="card container-card" id="container3">
-                    <div class="container-header">
-                        <h2><i class="fas fa-sliders-h"></i> Container 3: Interactive Slider</h2>
-                        <span class="container-badge">Interactive</span>
-                    </div>
-                    <div class="interactive-slider">
-                        <div class="slider-wrapper">
-                            <div class="slider-track">
-                                <div class="slider-item active">
-                                    <div class="slider-value">75%</div>
-                                    <div class="slider-label">User Engagement</div>
-                                </div>
-                                <div class="slider-item">
-                                    <div class="slider-value">89%</div>
-                                    <div class="slider-label">Satisfaction</div>
-                                </div>
-                                <div class="slider-item">
-                                    <div class="slider-value">92%</div>
-                                    <div class="slider-label">Performance</div>
-                                </div>
-                                <div class="slider-item">
-                                    <div class="slider-value">81%</div>
-                                    <div class="slider-label">Retention</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slider-input-container">
-                            <label for="valueSlider">Adjust Value:</label>
-                            <input type="range" id="valueSlider" min="0" max="100" value="75" class="value-slider">
-                            <div class="slider-value-display">
-                                Current Value: <span id="currentValue">75</span>%
-                            </div>
-                        </div>
-                        <div class="slider-arrows">
-                            <button class="arrow-btn" id="prevSliderItem"><i class="fas fa-chevron-left"></i> Previous</button>
-                            <button class="arrow-btn" id="nextSliderItem">Next <i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Container 4: Static Content -->
-                <section class="card container-card" id="container4">
-                    <div class="container-header">
-                        <h2><i class="fas fa-file-alt"></i> Container 4: Static Content</h2>
-                        <span class="container-badge">Static</span>
-                    </div>
-                    <div class="static-content">
-                        <div class="static-text">
-                            <h3>Static Information Section</h3>
-                            <p>This section displays static content such as text, images, or a combination of both. It is designed to remain unchanged and provides important information to users in a clear and readable format.</p>
-                            <div class="features-list">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Responsive across all devices</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Modern UI/UX design principles</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Touch-friendly mobile interface</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Optimized for performance</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="static-image">
-                            <div class="static-img-placeholder">
-                                <i class="fas fa-chart-pie"></i>
-                                <h4>Data Visualization</h4>
-                                <p>Sample static content area</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Container 5: Action Buttons -->
-                <section class="card container-card" id="container5">
-                    <div class="container-header">
-                        <h2><i class="fas fa-play-circle"></i> Container 5: Action Buttons</h2>
-                        <span class="container-badge">Interactive</span>
-                    </div>
-                    <div class="action-buttons-container">
-                        <div class="button-description">
-                            <h3>Interactive Controls</h3>
-                            <p>These buttons demonstrate interactive functionality with visual feedback. Suitable for both web and mobile applications.</p>
-                        </div>
-                        <div class="button-group">
-                            <button class="action-btn btn-primary" id="buttonA">
-                                <i class="fas fa-download"></i>
-                                <span>Button A</span>
-                                <small>Export Data</small>
-                            </button>
-                            <button class="action-btn btn-secondary" id="buttonB">
-                                <i class="fas fa-sync-alt"></i>
-                                <span>Button B</span>
-                                <small>Refresh Dashboard</small>
-                            </button>
-                            <button class="action-btn btn-accent" id="buttonC">
-                                <i class="fas fa-cog"></i>
-                                <span>Button C</span>
-                                <small>Settings</small>
-                            </button>
-                        </div>
-                        <div class="button-feedback">
-                            <div class="feedback-item">
-                                <i class="fas fa-mouse-pointer"></i>
-                                <span>Click for web interaction</span>
-                            </div>
-                            <div class="feedback-item">
-                                <i class="fas fa-hand-pointer"></i>
-                                <span>Tap for mobile interaction</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Container 6: Animated Slider -->
-                <section class="card container-card" id="container6">
-                    <div class="container-header">
-                        <h2><i class="fas fa-sync-alt"></i> Container 6: Animated Slider</h2>
-                        <span class="container-badge">Animated</span>
-                    </div>
-                    <div class="animated-slider-container">
-                        <div class="animated-slider">
-                            <div class="animated-slide active-slide">
-                                <div class="slide-icon">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
-                                <h3>Slide 1: Welcome to App</h3>
-                                <p>Thank you for using our responsive dashboard. Get started by exploring the containers and features.</p>
-                            </div>
-                            <div class="animated-slide">
-                                <div class="slide-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h3>Slide 2: Real-time Analytics</h3>
-                                <p>Monitor your data in real-time with our advanced analytics tools and visualization options.</p>
-                            </div>
-                            <div class="animated-slide">
-                                <div class="slide-icon">
-                                    <i class="fas fa-file-export"></i>
-                                </div>
-                                <h3>Slide 3: Custom Reports</h3>
-                                <p>Generate custom reports and export them in multiple formats for your business needs.</p>
-                            </div>
-                        </div>
-                        <div class="animation-controls">
-                            <button class="anim-btn" id="prevAnimSlide">
-                                <i class="fas fa-step-backward"></i>
-                            </button>
-                            <div class="animation-dots">
-                                <span class="anim-dot active"></span>
-                                <span class="anim-dot"></span>
-                                <span class="anim-dot"></span>
-                            </div>
-                            <button class="anim-btn" id="nextAnimSlide">
-                                <i class="fas fa-step-forward"></i>
-                            </button>
-                            <div class="animation-toggle">
-                                <span>Auto-play</span>
-                                <label class="switch">
-                                    <input type="checkbox" id="autoPlayToggle" checked>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Responsive Design Showcase -->
-                <section class="card showcase-card">
-                    <h2><i class="fas fa-laptop-mobile"></i> Responsive Design Showcase</h2>
-                    <div class="showcase-content">
-                        <div class="device-showcase">
-                            <div class="device desktop">
-                                <div class="device-screen">
-                                    <div class="screen-content">
-                                        <h4>Desktop View</h4>
-                                        <p>Full sidebar and multi-column layout</p>
-                                    </div>
-                                </div>
-                                <div class="device-label">Desktop</div>
-                            </div>
-                            <div class="device tablet">
-                                <div class="device-screen">
-                                    <div class="screen-content">
-                                        <h4>Tablet View</h4>
-                                        <p>Adaptive layout with responsive containers</p>
-                                    </div>
-                                </div>
-                                <div class="device-label">Tablet</div>
-                            </div>
-                            <div class="device mobile">
-                                <div class="device-screen">
-                                    <div class="screen-content">
-                                        <h4>Mobile View</h4>
-                                        <p>Hamburger menu and single column</p>
-                                    </div>
-                                </div>
-                                <div class="device-label">Mobile</div>
-                            </div>
-                        </div>
-                        <div class="responsive-info">
-                            <h3>Cross-Platform Compatibility</h3>
-                            <p>This design implements responsive web design principles and mobile app UI patterns for a seamless experience across all devices.</p>
-                            <div class="platform-icons">
-                                <i class="fab fa-chrome" title="Web Browser"></i>
-                                <i class="fab fa-android" title="Android App"></i>
-                                <i class="fab fa-apple" title="iOS App"></i>
-                                <i class="fab fa-windows" title="Windows"></i>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </div>
-
-        <!-- Mobile App Footer (for mobile view) -->
-        <footer class="mobile-app-footer">
-            <div class="footer-content">
-                <div class="app-info">
-                    <i class="fas fa-chart-line"></i>
-                    <div>
-                        <h4>Dashboard App</h4>
-                        <p>v2.1.0 • Responsive Design</p>
-                    </div>
-                </div>
-                <div class="app-actions">
-                    <button class="app-btn">
-                        <i class="fas fa-download"></i>
-                        <span>Update</span>
+                    <button class="slider-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
             </div>
-        </footer>
+            
+            <!-- Header -->
+            <header>
+                <h1>Responsive Dashboard</h1>
+                <p>Modern design with top-left image slider</p>
+            </header>
+        </div>
 
-        <!-- Desktop Footer -->
-        <footer class="footer">
-            <p>Responsive Dashboard &copy; 2023 | Built with HTML, CSS & JavaScript | Web & Mobile Compatible</p>
-            <div class="footer-links">
-                <a href="#"><i class="fas fa-code"></i> GitHub</a>
-                <a href="#"><i class="fas fa-question-circle"></i> Help</a>
-                <a href="#"><i class="fas fa-mobile-alt"></i> Mobile App</a>
-                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        <!-- Main Content -->
+        <div class="dashboard">
+            <!-- 6 Containers -->
+            <div class="containers-grid">
+                <!-- Container 1 -->
+                <div class="container-card" id="container1">
+                    <h3><i class="fas fa-images"></i> Container 1</h3>
+                    <p>Image or carousel section for visual content.</p>
+                    <div class="container-tag">Image Display</div>
+                </div>
+                
+                <!-- Container 2 -->
+                <div class="container-card" id="container2">
+                    <h3><i class="fas fa-info-circle"></i> Container 2</h3>
+                    <p>Text block with additional information and details.</p>
+                    <div class="container-tag">Information</div>
+                </div>
+                
+                <!-- Container 3 -->
+                <div class="container-card" id="container3">
+                    <h3><i class="fas fa-sliders-h"></i> Container 3</h3>
+                    <p>Interactive elements with user controls.</p>
+                    <div class="container-tag">Interactive</div>
+                </div>
+                
+                <!-- Container 4 -->
+                <div class="container-card" id="container4">
+                    <h3><i class="fas fa-file-alt"></i> Container 4</h3>
+                    <p>Static content area for fixed information.</p>
+                    <div class="container-tag">Static</div>
+                </div>
+                
+                <!-- Container 5 -->
+                <div class="container-card" id="container5">
+                    <h3><i class="fas fa-play-circle"></i> Container 5</h3>
+                    <p>Action buttons for user interactions.</p>
+                    <div class="buttons">
+                        <button class="btn btn-primary" id="buttonA">
+                            <i class="fas fa-download"></i> Button A
+                        </button>
+                        <button class="btn btn-secondary" id="buttonB">
+                            <i class="fas fa-sync-alt"></i> Button B
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Container 6 -->
+                <div class="container-card" id="container6">
+                    <h3><i class="fas fa-sync-alt"></i> Container 6</h3>
+                    <p>Animated content slider with transitions.</p>
+                    <div class="animated-slider">
+                        <div class="slide active-slide">
+                            <h4>Slide 1: Welcome to App</h4>
+                            <p>Dashboard with top-left image slider.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
+            
+            <!-- Information Sections -->
+            <div class="content-sections">
+                <!-- About Section -->
+                <section class="section">
+                    <h2><i class="fas fa-info-circle"></i> About This Dashboard</h2>
+                    <p>This responsive layout adapts seamlessly across desktop and mobile devices. It uses modern CSS techniques like Flexbox and Grid to ensure consistency, readability, and a smooth user experience.</p>
+                </section>
+                
+                <!-- Static Information -->
+                <section class="section">
+                    <h2><i class="fas fa-file-alt"></i> Static Information</h2>
+                    <p>This section displays static content such as text, images, or a combination of both. It is designed to remain unchanged and provides important information to users in a clear and readable format.</p>
+                </section>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
