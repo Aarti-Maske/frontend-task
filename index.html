@@ -3,118 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Dashboard</title>
+    <title>Mobile Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Image Slider at Top Left -->
-        <div class="top-slider-section">
-            <div class="image-slider">
+    <!-- Mobile App Container -->
+    <div class="mobile-app">
+        <!-- Header with Image Slider -->
+        <header class="app-header">
+            <div class="time-display" id="currentTime">0:00</div>
+            
+            <!-- Image Slider -->
+            <div class="header-slider">
                 <div class="slider-images">
-                    <img src="images/image1.jpg" class="slider-img active" alt="Slide 1">
-                    <img src="images/image2.jpg" class="slider-img" alt="Slide 2">
-                    <img src="images/image3.jpg" class="slider-img" alt="Slide 3">
-                    <img src="images/image4.jpg" class="slider-img" alt="Slide 4">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&auto=format" 
+                         class="slider-img active" alt="Analytics Dashboard">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop&auto=format" 
+                         class="slider-img" alt="Data Visualization">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop&auto=format" 
+                         class="slider-img" alt="Business Charts">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop&auto=format" 
+                         class="slider-img" alt="Performance Metrics">
                 </div>
-                <div class="slider-controls">
-                    <button class="slider-btn prev-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
-                    <button class="slider-btn next-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                <div class="slider-dots">
+                    <span class="slider-dot active" data-slide="0"></span>
+                    <span class="slider-dot" data-slide="1"></span>
+                    <span class="slider-dot" data-slide="2"></span>
+                    <span class="slider-dot" data-slide="3"></span>
                 </div>
             </div>
             
-            <!-- Header -->
-            <header>
-                <h1>Responsive Dashboard</h1>
-                <p>Modern design with top-left image slider</p>
-            </header>
-        </div>
+            <h1>Dashboard</h1>
+        </header>
 
         <!-- Main Content -->
-        <div class="dashboard">
-            <!-- 6 Containers -->
+        <main class="app-content">
+            <!-- Containers Grid -->
             <div class="containers-grid">
-                <!-- Container 1 -->
-                <div class="container-card" id="container1">
-                    <h3><i class="fas fa-images"></i> Container 1</h3>
-                    <p>Image or carousel section for visual content.</p>
-                    <div class="container-tag">Image Display</div>
-                </div>
-                
-                <!-- Container 2 -->
-                <div class="container-card" id="container2">
-                    <h3><i class="fas fa-info-circle"></i> Container 2</h3>
-                    <p>Text block with additional information and details.</p>
-                    <div class="container-tag">Information</div>
-                </div>
-                
-                <!-- Container 3 -->
-                <div class="container-card" id="container3">
-                    <h3><i class="fas fa-sliders-h"></i> Container 3</h3>
-                    <p>Interactive elements with user controls.</p>
-                    <div class="container-tag">Interactive</div>
-                </div>
-                
-                <!-- Container 4 -->
-                <div class="container-card" id="container4">
-                    <h3><i class="fas fa-file-alt"></i> Container 4</h3>
-                    <p>Static content area for fixed information.</p>
-                    <div class="container-tag">Static</div>
-                </div>
-                
-                <!-- Container 5 -->
-                <div class="container-card" id="container5">
-                    <h3><i class="fas fa-play-circle"></i> Container 5</h3>
-                    <p>Action buttons for user interactions.</p>
-                    <div class="buttons">
-                        <button class="btn btn-primary" id="buttonA">
-                            <i class="fas fa-download"></i> Button A
-                        </button>
-                        <button class="btn btn-secondary" id="buttonB">
-                            <i class="fas fa-sync-alt"></i> Button B
-                        </button>
+                <div class="container-item" id="container1">
+                    <div class="container-content">
+                        <h3>Container 1</h3>
+                        <div class="container-time" id="container1-time">0:00</div>
                     </div>
                 </div>
                 
-                <!-- Container 6 -->
-                <div class="container-card" id="container6">
-                    <h3><i class="fas fa-sync-alt"></i> Container 6</h3>
-                    <p>Animated content slider with transitions.</p>
-                    <div class="animated-slider">
-                        <div class="slide active-slide">
-                            <h4>Slide 1: Welcome to App</h4>
-                            <p>Dashboard with top-left image slider.</p>
+                <div class="container-item" id="container2">
+                    <div class="container-content">
+                        <h3>Container 2</h3>
+                        <div class="container-status">Active</div>
+                    </div>
+                </div>
+                
+                <div class="container-item" id="container3">
+                    <div class="container-content">
+                        <h3>Container 3</h3>
+                        <div class="container-status">Updated</div>
+                    </div>
+                </div>
+                
+                <div class="container-item" id="container4">
+                    <div class="container-content">
+                        <h3>Container 4</h3>
+                        <div class="container-status">Online</div>
+                    </div>
+                </div>
+                
+                <div class="container-item" id="container5">
+                    <div class="container-content">
+                        <h3>Container 5</h3>
+                        <div class="container-progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container-item" id="container6">
+                    <div class="container-content">
+                        <h3>Container 6</h3>
+                        <div class="container-stat">42</div>
+                    </div>
+                </div>
+                
+                <div class="container-item" id="container7">
+                    <div class="container-content">
+                        <h3>Container 7</h3>
+                        <div class="container-stat">85%</div>
+                    </div>
+                </div>
+                
+                <div class="container-item" id="container8">
+                    <div class="container-content">
+                        <h3>Container 8</h3>
+                        <div class="container-icon">
+                            <i class="fas fa-check-circle"></i>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Information Sections -->
-            <div class="content-sections">
-                <!-- About Section -->
-                <section class="section">
-                    <h2><i class="fas fa-info-circle"></i> About This Dashboard</h2>
-                    <p>This responsive layout adapts seamlessly across desktop and mobile devices. It uses modern CSS techniques like Flexbox and Grid to ensure consistency, readability, and a smooth user experience.</p>
-                </section>
-                
-                <!-- Static Information -->
-                <section class="section">
-                    <h2><i class="fas fa-file-alt"></i> Static Information</h2>
-                    <p>This section displays static content such as text, images, or a combination of both. It is designed to remain unchanged and provides important information to users in a clear and readable format.</p>
-                </section>
+            <!-- Second Header Section -->
+            <div class="section-header">
+                <h2>Statistics</h2>
             </div>
-        </div>
+            
+            <!-- Second Row of Containers -->
+            <div class="containers-row">
+                <div class="small-container" id="scontainer1">
+                    <h4>Users</h4>
+                    <div class="small-time">0:00</div>
+                </div>
+                
+                <div class="small-container" id="scontainer2">
+                    <h4>Revenue</h4>
+                    <div class="small-status">+12%</div>
+                </div>
+                
+                <div class="small-container" id="scontainer3">
+                    <h4>Orders</h4>
+                    <div class="small-status">Active</div>
+                </div>
+                
+                <div class="small-container" id="scontainer4">
+                    <h4>Growth</h4>
+                    <div class="small-stat">24%</div>
+                </div>
+                
+                <div class="small-container" id="scontainer5">
+                    <h4>Start</h4>
+                    <div class="small-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third Header Section -->
+            <div class="section-header">
+                <h2>Activity</h2>
+            </div>
+            
+            <!-- Empty Section -->
+            <div class="empty-section">
+                <p>Recent activities will appear here</p>
+            </div>
+        </main>
+
+        <!-- Bottom Tab Bar -->
+        <nav class="bottom-tab-bar">
+            <a href="#" class="tab-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="tab-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#" class="tab-item">
+                <i class="fas fa-bell"></i>
+                <span>Alerts</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="#" class="tab-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
     </div>
 
     <script src="script.js"></script>
